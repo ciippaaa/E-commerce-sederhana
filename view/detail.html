@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Detail Product</title>
+
+    <link rel="stylesheet" href="/src/output.css">
+</head>
+
+<body class="bg-[#f8f5f2]">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-[#eee]">
+
+        <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+
+            <!-- LEFT -->
+            <div class="flex items-center gap-4">
+
+                <button
+                    onclick="history.back()"
+                    class="w-12 h-12 rounded-full bg-white shadow-md border border-[#eadfd7] flex items-center justify-center hover:bg-[#fff7f2] transition"
+                >
+                    <img
+                        src="/IMG/arrow.png"
+                        alt="Back"
+                        class="w-5 h-5 object-contain"
+                    >
+                </button>
+
+                <a
+                    href="/view/index.html"
+                    class="text-4xl font-extrabold text-[#6b1230]"
+                >
+                    HarvestHub
+                </a>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="flex items-center gap-4">
+
+                <!-- CART -->
+                <a
+                    href="/view/cart.html"
+                    class="relative w-12 h-12 rounded-full bg-white shadow-md border border-[#eadfd7] flex items-center justify-center text-xl text-[#6b1230] hover:bg-[#fff7f2] transition"
+                >
+
+                    🛒
+
+                    <span class="absolute -top-1 -right-1 bg-[#6b1230] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                        1
+                    </span>
+
+                </a>
+
+                <!-- PROFILE -->
+                <a
+                    href="/view/profile.html"
+                    class="w-12 h-12 rounded-full overflow-hidden border border-[#eadfd7] shadow-md"
+                >
+
+                    <img
+                        src="/IMG/user (9).png"
+                        class="w-full h-full object-cover"
+                    >
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- DETAIL PRODUCT -->
+    <section class="pt-24 pb-16 px-6">
+
+        <div id="detail"></div>
+
+    </section>
+
+    <!-- JS -->
+    <script src="/SCRIPT/detail.js"></script>
+
+</body>
+</html>

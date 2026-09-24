@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masuk</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f6efe6] min-h-screen flex items-center justify-center">
+
+  <!-- CONTAINER -->
+  <div class="w-[850px] h-[500px] bg-white rounded-3xl overflow-hidden shadow-2xl flex">
+
+    <!-- LEFT -->
+    <div class="w-1/2 bg-[#f8f2ea] relative flex items-center justify-center overflow-hidden">
+
+      <!-- BULAT BESAR -->
+      <div class="absolute w-[350px] h-[350px] bg-[#d8b89c] rounded-full"></div>
+
+      <!-- BULAT DALAM -->
+      <div class="absolute w-[240px] h-[240px] bg-[#ead9c8] rounded-full"></div>
+
+      <!-- BULAT KECIL -->
+      <div class="absolute top-8 left-8 w-10 h-10 bg-[#efe4d7] rounded-full"></div>
+
+      <div class="absolute bottom-14 right-14 w-12 h-12 bg-[#efe4d7] rounded-full"></div>
+
+      <!-- LOGO -->
+      <div class="absolute top-6 left-6 flex items-center gap-2">
+
+        <div class="w-10 h-10 border-4 border-[#c8a98a] rounded-full flex items-center justify-center text-[#8b6b4f] font-bold text-sm">
+          HRH
+        </div>
+
+        <h1 class="text-xl font-bold text-[#8b6b4f]">
+          HARVESTHUB
+        </h1>
+
+      </div>
+
+      <!-- IMAGE -->
+      <img
+        src="/IMG/Gemini_Generated_Image_58nftf58nftf58nf-removebg-preview.png"
+        class="w-[220px] z-10"
+      >
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="w-1/2 bg-[#c8a98a] flex items-center justify-center">
+
+      <div class="w-[320px]">
+
+        <!-- TITLE -->
+        <h1 class="text-white text-4xl font-bold text-center mb-10">
+          LOGIN
+        </h1>
+
+        <!-- EMAIL -->
+        <div class="mb-6">
+
+          <label class="text-white block mb-2">
+            Email
+          </label>
+
+          <div class="bg-[#e5d2bf] rounded-full px-5 py-3 flex items-center">
+
+            <span class="text-[#8b6b4f] mr-3">
+            </span>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              class="bg-transparent w-full outline-none text-[#6d533d] placeholder:text-[#9f846d]"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="mb-8">
+
+          <label class="text-white block mb-2">
+            Password
+          </label>
+
+          <div class="bg-[#e5d2bf] rounded-full px-5 py-3 flex items-center">
+
+            <span class="text-[#8b6b4f] mr-3">
+              
+            </span>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              class="bg-transparent w-full outline-none text-[#6d533d] placeholder:text-[#9f846d]"
+            >
+
+          </div>
+
+        </div>
+
+        <!-- BUTTON -->
+        <button
+          onclick="login()"
+          class="w-full bg-[#8b6b4f] hover:bg-[#75563f] text-white py-3 rounded-xl font-bold transition duration-300"
+        >
+          LOGIN
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="/script/login.js"></script>
+  <script src="/view/index.html"></script>
+
+</body>
+</html>

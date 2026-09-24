@@ -1,0 +1,22 @@
+[
+    {
+        "username": "jaemin",
+        "password": "jaemin123",
+        "email": "jaemin@gmail.com"
+    },
+    {
+        "username": "keonho",
+        "password": "keonho123",
+        "email": "keonho@gmail.com"
+    },
+    {
+        "username": "seonghyeon",
+        "password": "seonghyeon123",
+        "email": "seonghyeon@gmail.com"
+    },
+    {
+        "username": "jisung",
+        "password": "jisung123",
+        "email": "jisung@gmail.com"
+    }
+]

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HarvestHub</title>
+
+    <link rel="stylesheet" href="/src/output.css">
+</head>
+
+<body class="bg-[#f6f1eb]">
+
+<!-- NAVBAR -->
+<nav class="bg-[#fffaf7] fixed w-full z-50 top-0 border-b border-[#eadfd7] shadow-sm">
+
+    <div class="max-w-[1400px] mx-auto flex items-center justify-between px-8 py-5 relative">
+
+        <!-- LOGO -->
+        <a href="#" class="flex items-center gap-3">
+
+            <img
+                src="/IMG/Gemini_Generated_Image_58nftf58nftf58nf-removebg-preview.png"
+                class="h-8"
+                alt="Logo"
+            >
+
+            <span class="text-3xl font-bold text-[#7a3d2b] tracking-wide">
+                HarvestHub
+            </span>
+
+        </a>
+
+        <!-- SEARCH -->
+        <div class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center w-[420px]">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari produk..."
+                class="w-full py-3 pl-6 pr-28 rounded-full border border-[#eadfd7] bg-white focus:outline-none focus:ring-4 focus:ring-[#f1ddd0]"
+            >
+
+            <button
+                onclick="searchProduct()"
+                class="absolute right-1 bg-[#6b1230] hover:bg-[#521024] text-white px-6 py-2 rounded-full font-semibold transition"
+            >
+                Cari
+            </button>
+
+        </div>
+
+        <!-- RIGHT MENU -->
+        <div class="hidden md:flex items-center gap-4 ml-auto">
+
+            <!-- CART -->
+            <a
+                href="cart.html"
+                class="relative flex items-center justify-center w-11 h-11 rounded-full border border-[#d8c2b0] hover:bg-[#f3e7dc] transition bg-white"
+            >
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 text-[#7a3d2b]"
+                >
+
+                    <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835L5.383 6.75m0 0h13.862c.75 0 1.28.735 1.04 1.446l-1.5 4.5a1.125 1.125 0 0 1-1.04.729H8.25m-2.867-6.675L6.75 15.75m0 0a2.25 2.25 0 1 0 4.5 0m-4.5 0a2.25 2.25 0 1 1 4.5 0m6.75 0a2.25 2.25 0 1 0 4.5 0m-4.5 0a2.25 2.25 0 1 1 4.5 0"
+                    />
+
+                </svg>
+
+                <span class="absolute -top-1 -right-1 bg-[#6b1230] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                    0
+                </span>
+
+            </a>
+
+            <!-- LOGIN -->
+            <a href="/view/login.html"
+            class="px-5 py-2 rounded-full border border-[#c8a27a] text-[#7a3d2b] font-semibold hover:bg-[#f3e7dc] transition"
+            >
+                Login
+            </a>
+
+            <!-- REGISTER -->
+            <a href="/view/register.html"
+            class="px-5 py-2 rounded-full bg-[#6b1230] text-white font-semibold hover:bg-[#521024] transition shadow-md"
+            >
+                Register
+            </a>
+
+            <!-- PROFILE -->
+            <a href="/view/profile.html"
+            id="profileMenu"
+            style="display: none;"
+            class="px-5 py-2 rounded-full bg-[#6b1230] text-white font-semibold hover:bg-[#521024] transition shadow-md"
+            >
+                Profile
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 px-6">
+
+<div class="relative overflow-hidden rounded-[40px] bg-[#f5ddd2] min-h-[560px]">
+
+    <!-- Background Image -->
+    <img
+        src="/IMG/A top-view shot of stylish fashion accessories arranged on a fashion magazine backdrop_ Include items such as sunglasses, scarves, watches, handbags, and statement jewelry, with room for fashion trend Stock I.jpg"
+        class="absolute inset-0 w-full h-full object-cover opacity-20"
+        alt=""
+    >
+
+    <!-- Content -->
+    <div class="relative z-10 h-full flex items-center px-10 md:px-20 py-20">
+
+        <div class="max-w-2xl">
+
+            <span class="bg-white px-5 py-2 rounded-full text-sm text-[#7a3d2b] shadow">
+                ✦ Welcome to HarvestHub
+            </span>
+
+            <h1 class="text-5xl md:text-7xl font-black text-[#3e2d23] leading-tight mb-6 mt-7">
+                HarvestHub <br>
+                Solusi Belanja Online Terbaik
+            </h1>
+
+            <p class="text-[#6d5a50] text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+                Belanja kebutuhan harian dengan mudah, cepat, dan harga terbaik hanya di HarvestHub.
+            </p>
+
+            <div class="flex gap-4">
+
+                <a href="/view/produk.html" class="bg-[#6b1230] hover:bg-[#521024] text-white px-8 py-4 rounded-full font-semibold transition duration-300 shadow-lg inline-flex items-center"
+>
+    Lihat Produk
+</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<!-- CATEGORY -->
+<section class="px-6 py-16 mb-40">
+
+<!-- TITLE -->
+<div class="text-center mb-2">
+
+    <h2 class="text-5xl font-bold text-[#3e2d23] leading-tight">
+        Harvest Collection
+    </h2>
+
+    <p class="text-gray-500 mt-1 text-lg">
+        Pilih koleksi favorit kamu
+    </p>
+
+</div>
+
+<!-- CATEGORY LIST -->
+<div class="flex flex-wrap justify-center gap-4 mt-14">
+
+    <!-- ELECTRONICS -->
+    <div
+    class="kategori-item w-44 h-24 rounded-2xl bg-white border border-[#eadfd7] shadow-sm flex flex-col items-center justify-center hover:-translate-y-1 hover:shadow-xl transition duration-300 cursor-pointer"
+    data-category="electronics"
+    >
+
+        <img src="/IMG/Acer’s touchscreen-equipped Aspire M5 ultrabook and V5 laptop available October 26th starting at $749_99.jpg"
+        class="w-14 h-14 object-contain mb-2"
+        alt="electronics">
+
+        <span class="font-semibold text-[#3e2d23] text-sm">
+            Electronics
+        </span>
+
+    </div>
+
+    <!-- JEWELERY -->
+    <div
+    class="kategori-item w-44 h-24 rounded-2xl bg-white border border-[#eadfd7] shadow-sm flex flex-col items-center justify-center hover:-translate-y-1 hover:shadow-xl transition duration-300 cursor-pointer"
+    data-category="jewelery"
+    >
+
+        <img
+        src="/IMG/Heart Bow Beaded Phone Charm Cute Y2K Phone Bracelet Strap Keychain Charm Wrist Strap for Key Ring Backpack Wallet Camera.jpg"
+        class="w-14 h-14 object-contain mb-2"
+        alt="jewelery">
+
+        <span class="font-semibold text-[#3e2d23] text-sm">
+            Jewelery
+        </span>
+
+    </div>
+
+    <!-- WOMEN -->
+    <div
+    class="kategori-item w-44 h-24 rounded-2xl bg-white border border-[#eadfd7] shadow-sm flex flex-col items-center justify-center hover:-translate-y-1 hover:shadow-xl transition duration-300 cursor-pointer"
+    data-category="women's clothing"
+    >
+
+        <img
+        src="/IMG/download (9).jpg"
+        class="w-14 h-14 object-contain mb-2"
+        alt="women">
+
+        <span class="font-semibold text-[#3e2d23] text-sm">
+            Women's
+        </span>
+
+    </div>
+
+    <!-- MEN -->
+    <div
+    class="kategori-item w-44 h-24 rounded-2xl bg-white border border-[#eadfd7] shadow-sm flex flex-col items-center justify-center hover:-translate-y-1 hover:shadow-xl transition duration-300 cursor-pointer"
+    data-category="men's clothing"
+    >
+
+        <img
+        src="/IMG/인조 가죽 양털 카라 플리스 안감 재킷.jpg"
+        class="w-14 h-14 object-contain mb-2"
+        alt="men">
+
+        <span class="font-semibold text-[#3e2d23] text-sm">
+            Men's
+        </span>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- TRENDING PRODUCT -->
+<section class="px-6 py-24">
+
+<!-- TITLE -->
+<div class="text-center mb-20">
+
+    <p class="text-[#8b5e3c] font-semibold tracking-[3px] uppercase mb-3">
+        HarvestHub
+    </p>
+
+    <h2 class="text-5xl font-black text-[#3e2d23]">
+        Produk Treding di HarvestHub
+    </h2>
+
+    <p class="text-gray-500 mt-4 text-lg">
+        Barang favorit pelanggan dengan kualitas terbaik dan harga terjangkau hanya di HarvestHub.
+    </p>
+
+</div>
+
+<!-- LIST -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
+    <!-- CARD 1 -->
+    <div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-[#f0e3db] max-w-[280px] mx-auto">
+
+        <div class="relative overflow-hidden">
+
+            <img
+                src="/IMG/download (12).jpg"
+                class="w-full h-[220px] object-cover hover:scale-105 transition duration-500"
+                alt=""
+            >
+
+        </div>
+
+        <div class="p-5">
+
+            <h3 class="text-lg font-bold text-[#3e2d23] mb-2">
+                Jepitan Rambut
+            </h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Style vintage modern yang lagi viral tahun ini.
+            </p>
+
+            <div class="flex items-center justify-between">
+
+                <span class="text-[#6b1230] text-lg font-bold">
+                    Rp25.000
+                </span>
+
+                <span class="text-xs text-gray-400 italic">
+                    Trending
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-[#f0e3db] max-w-[280px] mx-auto">
+
+        <div class="relative overflow-hidden">
+
+            <img
+                src="/IMG/download (14).jpg"
+                class="w-full h-[220px] object-cover hover:scale-105 transition duration-500"
+                alt=""
+            >
+
+        </div>
+
+        <div class="p-5">
+
+            <h3 class="text-lg font-bold text-[#3e2d23] mb-2">
+                Smart Watch
+            </h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Jam aesthetic premium dengan desain clean.
+            </p>
+
+            <div class="flex items-center justify-between">
+
+                <span class="text-[#6b1230] text-lg font-bold">
+                    Rp330.000
+                </span>
+
+                <span class="text-xs text-gray-400 italic">
+                    Trending
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-[#f0e3db] max-w-[280px] mx-auto">
+
+        <div class="relative overflow-hidden">
+
+            <img
+                src="/IMG/Loose American Men's Leather Jacket Trend Embroidered Durable Men's Jacket.jpg"
+                class="w-full h-[220px] object-cover hover:scale-105 transition duration-500"
+                alt=""
+            >
+
+        </div>
+
+        <div class="p-5">
+
+            <h3 class="text-lg font-bold text-[#3e2d23] mb-2">
+                Korean Jacket Men
+            </h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Jaket korean style dengan warna soft elegant.
+            </p>
+
+            <div class="flex items-center justify-between">
+
+                <span class="text-[#6b1230] text-lg font-bold">
+                    Rp379K
+                </span>
+
+                <span class="text-xs text-gray-400 italic">
+                    Trending
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-[#f0e3db] max-w-[280px] mx-auto">
+
+        <div class="relative overflow-hidden">
+
+            <img
+                src="/IMG/download (11).jpg"
+                class="w-full h-[220px] object-cover hover:scale-105 transition duration-500"
+                alt=""
+            >
+
+        </div>
+
+        <div class="p-5">
+
+            <h3 class="text-lg font-bold text-[#3e2d23] mb-2">
+                Woman T-shirt
+            </h3>
+
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                Sneakers comfy dengan desain streetwear modern.
+            </p>
+
+            <div class="flex items-center justify-between">
+
+                <span class="text-[#6b1230] text-lg font-bold">
+                    Rp59.000
+                </span>
+
+                <span class="text-xs text-gray-400 italic">
+                    Trending
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+<!-- LIST -->
+
+<!-- HOW IT WORKS -->
+<section class="px-6 py-24 bg-white">
+
+    <!-- TITLE -->
+    <div class="text-center mb-20">
+
+        <p class="text-[#8b5e3c] font-semibold tracking-[3px] uppercase mb-3">
+            How It Works
+        </p>
+
+        <h2 class="text-5xl font-black text-[#3e2d23]">
+            Cara Belanja di HarvestHub
+        </h2>
+
+        <p class="text-gray-500 mt-4 text-lg">
+            Belanja jadi lebih mudah dan cepat
+        </p>
+
+    </div>
+
+    <!-- STEPS -->
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+
+        <!-- STEP 1 -->
+        <div class="text-center group">
+
+            <div class="w-28 h-28 mx-auto rounded-full bg-[#fff4ec] flex items-center justify-center shadow-md group-hover:scale-110 transition duration-300">
+
+                <img
+                src="/IMG/icons 1.jpeg"
+                class="w-14 h-14 object-contain"
+                alt=""
+                >
+
+            </div>
+
+            <div class="w-8 h-8 rounded-full bg-[#6b1230] text-white flex items-center justify-center mx-auto mt-5 text-sm font-bold">
+                1
+            </div>
+
+            <h3 class="mt-4 text-lg font-bold text-[#3e2d23]">
+                Download Aplikasi HarvestHub
+            </h3>
+            <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                Cari produk favorit kamu dengan mudah
+            </p>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="text-center group">
+
+            <div class="w-28 h-28 mx-auto rounded-full bg-[#fff4ec] flex items-center justify-center shadow-md group-hover:scale-110 transition duration-300">
+
+                <img
+                src="/IMG/icons 5.jpeg"
+                class="w-14 h-14 object-contain"
+                alt=""
+                >
+
+            </div>
+
+            <div class="w-8 h-8 rounded-full bg-[#6b1230] text-white flex items-center justify-center mx-auto mt-5 text-sm font-bold">
+                2
+            </div>
+
+            <h3 class="mt-4 text-lg font-bold text-[#3e2d23]">
+                Masukkan Keranjang
+            </h3>
+
+            <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                Tambahkan produk ke cart dengan satu klik
+            </p>
+
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="text-center group">
+
+            <div class="w-28 h-28 mx-auto rounded-full bg-[#fff4ec] flex items-center justify-center shadow-md group-hover:scale-110 transition duration-300">
+
+                <img
+                src="/IMG/icons 2.jpeg"
+                class="w-14 h-14 object-contain"
+                alt=""
+                >
+
+            </div>
+
+            <div class="w-8 h-8 rounded-full bg-[#6b1230] text-white flex items-center justify-center mx-auto mt-5 text-sm font-bold">
+                3
+            </div>
+
+            <h3 class="mt-4 text-lg font-bold text-[#3e2d23]">
+               Masukan Deetail Alamat & Waktu 
+            </h3>
+
+            <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                Isi detail pesanan dan alamat pengiriman
+            </p>
+
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="text-center group">
+
+            <div class="w-28 h-28 mx-auto rounded-full bg-[#fff4ec] flex items-center justify-center shadow-md group-hover:scale-110 transition duration-300">
+
+                <img
+                src="/IMG/icons 3.jpeg"
+                class="w-14 h-14 object-contain"
+                alt=""
+                >
+
+            </div>
+
+            <div class="w-8 h-8 rounded-full bg-[#6b1230] text-white flex items-center justify-center mx-auto mt-5 text-sm font-bold">
+                4
+            </div>
+
+            <h3 class="mt-4 text-lg font-bold text-[#3e2d23]">
+                Pembayaran
+            </h3>
+
+            <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                Pilih metode pembayaran yang tersedia
+            </p>
+
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="text-center group">
+
+            <div class="w-28 h-28 mx-auto rounded-full bg-[#fff4ec] flex items-center justify-center shadow-md group-hover:scale-110 transition duration-300">
+
+                <img
+                src="/IMG/icons 4.jpeg"
+                class="w-14 h-14 object-contain"
+                alt=""
+                >
+
+            </div>
+
+            <div class="w-8 h-8 rounded-full bg-[#6b1230] text-white flex items-center justify-center mx-auto mt-5 text-sm font-bold">
+                5
+            </div>
+
+            <h3 class="mt-4 text-lg font-bold text-[#3e2d23]">
+                Produk Dikirim
+            </h3>
+
+            <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+                Pesanan kamu langsung diproses cepat
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+<!-- FOOTER -->
+<footer class="bg-[#fff7f3] border-t border-gray-200 mt-20 pt-14">
+
+  <!-- TOP -->
+  <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
+
+    <!-- LOGO -->
+    <div class="lg:col-span-2">
+
+      <h1 class="text-5xl text-[#5c0a2f] mb-3 font-['Playfair_Display'] font-bold italic">
+        HarvestHub
+      </h1>
+
+      <p class="text-gray-500 leading-7 text-sm mb-5 max-w-md">
+        Discover your life journey with premium fashion and lifestyle products at Harvesthub. 
+        </p>
+
+      <!-- SOCIAL -->
+      <div class="flex gap-3">
+
+        <div class="w-10 h-10 rounded-full bg-[#f5d7cd] flex items-center justify-center text-[#5c0a2f] cursor-pointer hover:bg-[#5c0a2f] hover:text-white duration-300">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+
+        <div class="w-10 h-10 rounded-full bg-[#f5d7cd] flex items-center justify-center text-[#5c0a2f] cursor-pointer hover:bg-[#5c0a2f] hover:text-white duration-300">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <div class="w-10 h-10 rounded-full bg-[#f5d7cd] flex items-center justify-center text-[#5c0a2f] cursor-pointer hover:bg-[#5c0a2f] hover:text-white duration-300">
+          <i class="fab fa-twitter"></i>
+        </div>
+
+        <div class="w-10 h-10 rounded-full bg-[#f5d7cd] flex items-center justify-center text-[#5c0a2f] cursor-pointer hover:bg-[#5c0a2f] hover:text-white duration-300">
+          <i class="fab fa-pinterest-p"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOP -->
+    <div>
+
+      <h3 class="font-semibold text-lg mb-5 text-gray-800">
+        Shop
+      </h3>
+
+      <div class="flex flex-col gap-3 text-sm text-gray-500">
+
+        <a href="#" class="hover:text-[#5c0a2f] duration-300">
+          Jewelry
+        </a>
+
+        <a href="#" class="hover:text-[#5c0a2f] duration-300">
+          Electronics
+        </a>
+
+        <a href="#" class="hover:text-[#5c0a2f] duration-300">
+          Women's Clothing
+        </a>
+
+        <a href="#" class="hover:text-[#5c0a2f] duration-300">
+          Man Clothing
+        </a>
+
+      </div>
+    </div>
+
+    <!-- DISCOVER -->
+    <div>
+
+      <h3 class="font-semibold text-lg mb-5 text-gray-800">
+        Discover
+      </h3>
+
+      <div class="flex flex-col gap-3 text-sm text-gray-500">
+        <a href="#" class="hover:text-[#5c0a2f] duration-300">Produk Terlaris</a>
+      </div>
+    </div>
+
+    <!-- HELP -->
+    <div>
+      <h3 class="font-semibold text-lg mb-5 text-gray-800">Help</h3>
+      <div class="flex flex-col gap-3 text-sm text-gray-500">
+
+        <a href="#" class="hover:text-[#5c0a2f] duration-300">Help Center</a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="w-[90%] mx-auto border-t border-gray-200 py-6">
+    <h3 class="font-semibold text-gray-800 mb-4">Payment Methods</h3>
+
+    <div class="flex flex-wrap gap-4">
+      <span class="bg-white border border-gray-300 px-5 py-2 rounded-lg text-sm shadow-sm">QRIS</span>
+      <span class="bg-white border border-gray-300 px-5 py-2 rounded-lg text-sm shadow-sm">TUNAI</span>
+      <span class="bg-white border border-gray-300 px-5 py-2 rounded-lg text-sm shadow-sm">TRANSFER BANK</span>
+    </div>
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="bg-[#5c0a2f] text-white text-center py-5 text-sm mt-8">HarvestHub 2026 Carefully. All rights reserved.</div>
+
+</footer>
+<!-- SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+<script src="./script/search.js"></script>
+<script src="./script/produk.js"></script>
+<script src="./script/detail.js"></script>
+<script src="./script/login.js"></script>
+
+</body>
+</html>

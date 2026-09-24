@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart & Checkout</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="/src/output.css"/>
+</head>
+
+<body class="bg-[#f8f3ee]"
+  style="font-family: 'Poppins', sans-serif;">
+
+  <!-- WRAPPER -->
+  <div class="flex">
+
+    <!-- ================= CART (KIRI - FULL WIDTH) ================= -->
+    <div class="w-full pr-[420px] p-10">
+
+      <!-- BOX CART -->
+      <div class="bg-[#fffaf7] rounded-[40px] p-8 shadow-[0_20px_60px_rgba(107,18,48,0.12)] border border-[#f1e4dc]">
+
+        <!-- HEADER -->
+        <div class="flex items-center justify-between mb-8">
+
+          <a href="produk.html"
+            class="w-12 h-12 rounded-full bg-[#f8ece5] flex items-center justify-center text-2xl text-[#6b1230]">
+            ←
+          </a>
+
+          <h1 class="text-3xl font-bold text-[#3e2d23]">
+            My Cart
+          </h1>
+
+          <div class="w-12"></div>
+
+        </div>
+
+        <!-- CART ITEMS -->
+        <div id="cartItems" class="flex flex-col gap-5 min-h-[400px]"></div>
+
+        <!-- TOTAL -->
+        <div class="bg-white rounded-[28px] p-6 mt-7 border border-[#f1e4dc]">
+
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-gray-500 font-medium">Product</p>
+            <p id="totalItem" class="font-semibold text-[#6b1230]">0 Items</p>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-gray-500 font-medium">TOTAL</p>
+            <h2 id="total" class="text-3xl font-extrabold text-[#6b1230]">Rp 0</h2>
+          </div>
+
+        </div>
+
+        <button class="w-full bg-[#6b1230] hover:bg-[#521024] rounded-2xl py-5 text-white mt-7">
+          Checkout
+        </button>
+
+      </div>
+    </div>
+
+    <!-- ================= CHECKOUT (KANAN FIXED POJOK) ================= -->
+    <div class="fixed right-0 top-0 h-full w-[380px] bg-[#fffaf7] p-6 overflow-y-auto shadow-[-10px_0_40px_rgba(0,0,0,0.08)] border-l border-[#f1e4dc]">
+
+      <!-- HEADER -->
+      <div class="flex items-center justify-between mb-8">
+
+        <a href="/view/cart.html"
+          class="w-12 h-12 rounded-full bg-[#f8ece5] flex items-center justify-center text-2xl text-[#6b1230]">
+          ←
+        </a>
+
+        <h1 class="text-3xl font-bold text-[#3e2d23]">
+          Checkout
+        </h1>
+
+        <div class="w-12"></div>
+
+      </div>
+
+      <!-- ALAMAT -->
+      <div class="bg-white rounded-[28px] p-5 border border-[#f1e4dc] shadow-sm">
+
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-semibold text-[#3e2d23] text-lg">Alamat</h3>
+          <button class="text-[#6b1230] font-medium hover:underline">Edit</button>
+        </div>
+
+        <p class="text-gray-500 leading-8">
+          Rumah Kedua <br>
+          Jalan Mawar No 7 <br>
+          Jakarta, Indonesia
+        </p>
+
+      </div>
+
+      
+
+      <!-- PAYMENT -->
+      <div class="bg-white rounded-[28px] p-5 mt-5 border border-[#f1e4dc]">
+
+        <h3 class="font-semibold text-[#3e2d23] text-lg mb-5">
+          Metode Pembayaran
+        </h3>
+
+        <div class="flex items-center justify-between border-b border-[#f1e4dc] pb-4">
+          <div class="flex items-center gap-3">
+            💳 <p class="font-medium text-[#3e2d23]">Kartu Kredit</p>
+          </div>
+          <div class="w-5 h-5 rounded-full border-4 border-[#6b1230]"></div>
+        </div>
+
+        <div class="flex items-center justify-between pt-4">
+          <div class="flex items-center gap-3">
+            🅿️ <p class="font-medium text-[#3e2d23]">PayPal</p>
+          </div>
+          <div class="w-5 h-5 rounded-full border border-gray-400"></div>
+        </div>
+
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="bg-white rounded-[28px] p-5 mt-5 border border-[#f1e4dc]">
+
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-gray-500">Subtotal</p>
+          <p id="checkoutSubtotal" class="font-semibold text-[#3e2d23]">Rp 0</p>
+        </div>
+
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-gray-500">Ongkir</p>
+          <p class="font-semibold text-[#3e2d23]">Free</p>
+        </div>
+
+        <div class="border-t border-[#f1e4dc] pt-4 flex justify-between">
+
+          <p class="font-semibold text-[#3e2d23]">
+            TOTAL <br> PAYMENT
+          </p>
+
+          <h2 id="checkoutTotal" class="text-xl font-extrabold text-[#6b1230] text-right">
+            Rp 0
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+      <button
+        onclick="checkout()"
+        class="w-full bg-[#6b1230] hover:bg-[#521024] rounded-2xl py-5 text-white mt-6">
+        Place Order
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="/script/produk.js"></script>
+
+</body>
+</html>
